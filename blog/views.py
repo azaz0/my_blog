@@ -26,5 +26,5 @@ def posts(request):
     return render(request, 'blog/posts.html')
 
 
-def post(request):
+def post_detail(request):
     return render(request, 'blog/post.html')
