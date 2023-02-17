@@ -23,7 +23,7 @@ def index(request):
 
 
 def posts(request):
-    return render(request, 'blog/posts.html')
+    return render(request, 'blog/includes/posts.html')
 
 
 def post_detail(request):
