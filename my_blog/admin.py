@@ -2,12 +2,11 @@ from django.contrib import admin
 from .models import Post, Category, Tag, Comment, Author, Subscriber
 
 
-@admin.register(Post)
+# @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'date_posted')
     list_filter = ('date_posted', 'categories', 'tags')
     search_fields = ('title', 'content')
-    prepopulated_fields = {'slug': ('title',)}
 
 
 @admin.register(Category)
@@ -24,9 +23,9 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'post', 'date_posted')
+    list_display = ('content', 'post', 'date_posted')
     list_filter = ('date_posted',)
-    search_fields = ('name', 'email', 'body')
+    search_fields = ('content', 'email', 'body')
 
 
 @admin.register(Author)
