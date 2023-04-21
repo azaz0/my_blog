@@ -1,0 +1,23 @@
+[
+  {
+    "model": "my_blog.tag",
+    "pk": 1,
+    "fields": {
+      "name": "django"
+    }
+  },
+  {
+    "model": "my_blog.tag",
+    "pk": 2,
+    "fields": {
+      "name": "python"
+    }
+  },
+  {
+    "model": "my_blog.tag",
+    "pk": 3,
+    "fields": {
+      "name": "web development"
+    }
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "model": "my_blog.post",
+    "pk": 1,
+    "fields": {
+      "title": "Wprowadzenie do testowania",
+      "content": "Testowanie oprogramowania to proces, który ma na celu weryfikację poprawności działania systemu. Testy pozwalają na wykrycie błędów i ewentualne ich naprawienie jeszcze przed wprowadzeniem systemu do użytku. Testy są istotnym elementem procesu wytwarzania oprogramowania i są nieodłączne od każdej fazy cyklu życia systemu. Podstawowymi technikami testowania są testowanie jednostkowe, testowanie integracyjne, testowanie systemowe i testowanie akceptacyjne. W ramach testowania można korzystać z różnych narzędzi i technik, takich jak testy automatyczne czy testy niezależne. Organizacja ISTQB oferuje certyfikację testerów i zapewnia standardy dla testowania oprogramowania.",
+      "date_posted": "2023-04-22T12:00:00Z",
+      "author": 1,
+      "slug": "wprowadzenie-do-testowania",
+      "categories": [
+        1
+      ],
+      "tags": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "my_blog.post",
+    "pk": 2,
+    "fields": {
+      "title": "Poziomy testowania",
+      "content": "Poziomy testowania oprogramowania to określone etapy testowania, które są wykonywane w celu sprawdzenia, czy produkt spełnia wymagania jakościowe i funkcjonalne. Poziomy testowania obejmują testowanie jednostkowe, testowanie integracyjne, testowanie systemowe i testowanie akceptacyjne. Testowanie jednostkowe polega na testowaniu poszczególnych komponentów systemu, natomiast testowanie integracyjne sprawdza interakcje między różnymi komponentami. Testowanie systemowe polega na sprawdzeniu funkcjonalności i zachowania systemu jako całości, a testowanie akceptacyjne ma na celu zweryfikowanie, czy system spełnia wymagania użytkownika. Organizacja ISTQB definiuje poziomy testowania i zapewnia standardy dla testowania oprogramowania.",
+      "date_posted": "2023-04-23T12:00:00Z",
+      "author": 1,
+      "slug": "poziomy-testowania",
+      "categories": [
+        1
+      ],
+      "tags": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "my_blog.post",
+    "pk": 3,
+    "fields": {
+      "title": "Typy testów",
+      "content": "Istnieje wiele różnych typów testów, które można stosować podczas testowania oprogramowania. Są to między innymi testy funkcjonalne, testy niefunkcjonalne, testy automatyczne, testy wydajnościowe, testy obciążeniowe i wiele innych. Każdy typ testów ma swoje specyficzne cechy i może być stosowany w różnych fazach cyklu życia systemu.\\Testy funkcjonalne koncentrują się na weryfikacji, czy system działa zgodnie z wymaganiami funkcjonalnymi. W ramach tych testów można sprawdzić poprawność działania poszczególnych funkcjonalności systemu, takich jak np. logowanie użytkownika czy dodawanie nowych wpisów.\\Testy niefunkcjonalne natomiast skupiają się na weryfikacji innych cech systemu, takich jak wydajność, niezawodność czy bezpieczeństwo. W ramach tych testów można sprawdzić np. czy system działa wystarczająco szybko, czy nie ulega awariom i czy jest wystarczająco bezpieczny.\\Testy automatyczne to testy przeprowadzane automatycznie, przy użyciu specjalistycznego oprogramowania. Pozwalają one na przetestowanie dużej ilości przypadków testowych w krótkim czasie i są często stosowane w ramach testów regresyjnych, które mają na celu sprawdzenie, czy zmiany wprowadzone w systemie nie wpłynęły negatywnie na jego funkcjonalność.\\Testy wydajnościowe i obciążeniowe pozwalają na sprawdzenie, jak system działa pod dużym obciążeniem. Testy wydajnościowe pozwalają na sprawdzenie szybkości działania systemu, natomiast testy obciążeniowe na to, jak system działa przy dużym obciążeniu w postaci np. dużej liczby użytkowników.\\Organizacja ISTQB definiuje również wiele innych typów testów, takich jak np. testy bezpieczeństwa czy testy kompatybilności. Wybór odpowiedniego typu testów zależy od specyfiki testowanego systemu oraz od fazy cyklu życia systemu, w której testy są przeprowadzane.",
+      "date_posted": "2023-04-23T12:00:00Z",
+      "author": 1,
+      "slug": "typy-testow",
+      "categories": [
+        1
+      ],
+      "tags": [
+        3
+      ]
+    }
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "model": "my_blog.category",
+    "pk": 1,
+    "fields": {
+      "name": "tester_path",
+      "slug": "tester-path",
+      "description": "",
+      "date_created": "2023-04-21T12:00:00Z",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "my_blog.category",
+    "pk": 2,
+    "fields": {
+      "name": "sport",
+      "slug": "sport",
+      "description": "",
+      "date_created": "2023-04-21T12:00:00Z",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "my_blog.category",
+    "pk": 3,
+    "fields": {
+      "name": "about_me",
+      "slug": "about-me",
+      "description": "",
+      "date_created": "2023-04-21T12:00:00Z",
+      "created_by": 1
+    }
+  }
+]
