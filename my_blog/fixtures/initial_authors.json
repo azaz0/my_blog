@@ -1,0 +1,29 @@
+[
+  {
+    "model": "my_blog.author",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "bio": "Jestem autorem pierwszego wpisu na tym blogu.",
+      "website": "https://www.autor1.com"
+    }
+  },
+  {
+    "model": "my_blog.author",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "bio": "Jestem autorem drugiego wpisu na tym blogu.",
+      "website": "https://www.autor2.com"
+    }
+  },
+  {
+    "model": "my_blog.author",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "bio": "Jestem autorem trzeciego wpisu na tym blogu.",
+      "website": "https://www.autor3.com"
+    }
+  }
+]
