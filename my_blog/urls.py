@@ -1,14 +1,21 @@
-from django.urls import include, path
+from django.urls import path, include
 from rest_framework import routers
-from . import views
+from .views import (
+    AuthorViewSet,
+    CategoryViewSet,
+    CommentViewSet,
+    PostViewSet,
+    SubscriberViewSet,
+    TagViewSet,
+)
 
 router = routers.DefaultRouter()
-router.register(r'authors', views.AuthorViewSet)
-router.register(r'categories', views.CategoryViewSet)
-router.register(r'comments', views.CommentViewSet)
-router.register(r'posts', views.PostViewSet)
-router.register(r'subscribers', views.SubscriberViewSet)
-router.register(r'tags', views.TagViewSet)
+router.register('authors', AuthorViewSet)
+router.register('categories', CategoryViewSet)
+router.register('comments', CommentViewSet)
+router.register('posts', PostViewSet)
+router.register('subscribers', SubscriberViewSet)
+router.register('tags', TagViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
