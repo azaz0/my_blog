@@ -1,76 +1,31 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from './views/Home.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from '../views/Home.vue';
+import Post from '../views/Post.vue';
+import store from '../store/index.js';
 
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home,
+    },
+    {
+      path: '/posts/:id',
+      name: 'post',
+      component: Post,
+      props: true,
+    },
+  ],
+});
 
-Vue.use(VueRouter)
+router.beforeEach((to, from, next) => {
+  if (from.path === '/') {
+    next();
+  } else {
+    store.dispatch('fetchPosts').then(() => next());
+  }
+});
 
-const router = new VueRouter({
-    mode: 'history',
-    routes: [
-        {
-            path: '/',
-            name: 'home',
-            component: Home,
-            beforeEnter: (to, from, next) => {
-                axios.get('/api/posts/')
-                    .then(response => {
-                        next({props: {posts: response.data}});
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    });
-            }
-        }
-        // {
-        //     path: '/posts',
-        //     name: 'posts',
-        //     component: Posts,
-        //     beforeEnter: (to, from, next) => {
-        //         axios.get('/api/posts/')
-        //             .then(response => {
-        //                 next({props: {posts: response.data}});
-        //             })
-        //             .catch(error => {
-        //                 console.log(error);
-        //             });
-        //     }
-        // },
-        // {
-        //     path: '/posts/:id',
-        //     name: 'post',
-        //     component: Post,
-        //     beforeEnter: (to, from, next) => {
-        //         axios.get('/api/posts/' + to.params.id)
-        //             .then(response => {
-        //                 next({props: {post: response.data}});
-        //             })
-        //             .catch(error => {
-        //                 console.log(error);
-        //             });
-        //     }
-        // },
-        // {
-        //     path: '/categories',
-        //     name: 'categories',
-        //     component: Categories
-        // },
-        // {
-        //     path: '/authors',
-        //     name: 'authors',
-        //     component: Authors
-        // },
-        // {
-        //     path: '/authors/:id',
-        //     name: 'author',
-        //     component: Author
-        // },
-        // {
-        //     path: '/tags',
-        //     name: 'tags',
-        //     component: Tags
-        // }
-    ]
-})
-
-export default router
+export default router;

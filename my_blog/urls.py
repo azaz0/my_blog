@@ -1,4 +1,5 @@
 from django.urls import path, include
+from django.contrib import admin
 from rest_framework import routers
 from .views import (
     AuthorViewSet,
@@ -10,13 +11,14 @@ from .views import (
 )
 
 router = routers.DefaultRouter()
-router.register('authors', AuthorViewSet)
-router.register('categories', CategoryViewSet)
-router.register('comments', CommentViewSet)
-router.register('posts', PostViewSet)
-router.register('subscribers', SubscriberViewSet)
-router.register('tags', TagViewSet)
+router.register(r'authors', AuthorViewSet)
+router.register(r'categories', CategoryViewSet)
+router.register(r'comments', CommentViewSet)
+router.register(r'posts', PostViewSet)
+router.register(r'subscribers', SubscriberViewSet)
+router.register(r'tags', TagViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('admin/', admin.site.urls)
 ]

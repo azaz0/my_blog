@@ -2,7 +2,7 @@
   <div>
     <Navbar/>
     <Header/>
-    <div class="container">
+    <div className="container">
       <SearchBox/>
     </div>
     <PostList :posts="posts"/>
@@ -11,14 +11,15 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
-import Header from '@/components/Header.vue';
-import SearchBox from '@/components/SearchBox.vue';
-import PostList from '@/components/PostList.vue';
-import Footer from '@/components/Footer.vue';
+import Navbar from "@/components/Navbar.vue";
+import Header from "@/components/Header.vue";
+import SearchBox from "@/components/SearchBox.vue";
+import PostList from "@/components/PostList.vue";
+import Footer from "@/components/Footer.vue";
+import {mapState, mapActions} from "vuex";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Navbar,
     Header,
@@ -26,26 +27,14 @@ export default {
     PostList,
     Footer,
   },
-  data() {
-    return {
-      posts: [],
-    };
+  computed: {
+    ...mapState(["posts"]),
   },
-  beforeRouteEnter(to, from, next) {
-    next((vm) => {
-      vm.posts = to.params.posts;
-    });
+  created() {
+    this.fetchPosts();
+  },
+  methods: {
+    ...mapActions(["fetchPosts"]),
   },
 };
 </script>
-
-<style>
-/* Importowanie stylów Bootstrapa */
-@import "~bootstrap/dist/css/bootstrap.min.css";
-
-/* Dodawanie stylów dla komponentu PostList */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-</style>

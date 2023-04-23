@@ -1,15 +1,14 @@
+from django.http import JsonResponse
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from .models import Author, Category, Comment, Post, Subscriber, Tag
-from .serializers import (
-    AuthorSerializer,
-    CategorySerializer,
-    CommentSerializer,
-    PostSerializer,
-    SubscriberSerializer,
-    TagSerializer,
-)
+from .serializers.AuthorSerializer import AuthorSerializer
+from .serializers.CategorySerializer import CategorySerializer
+from .serializers.CommentSerializer import CommentSerializer
+from .serializers.PostSerializer import PostSerializer
+from .serializers.SubscriberSerializer import SubscriberSerializer
+from .serializers.TagSerializer import TagSerializer
 
 
 class AuthorViewSet(viewsets.ModelViewSet):
@@ -41,6 +40,7 @@ class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
 
 
+
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -50,7 +50,7 @@ class PostViewSet(viewsets.ModelViewSet):
         post = self.get_object()
         comments = post.comment_set.all()
         serializer = CommentSerializer
-        return Response(serializer.data)
+        return JsonResponse(serializer.data)
 
 
 class SubscriberViewSet(viewsets.ModelViewSet):
